@@ -1,7 +1,22 @@
-import { data } from '../data';
+/**
+ * Library import
+ */
 import { useState } from 'react';
-const BASE_URL = "https://chupaprecios.com.mx/rest/V1";
 
+/**
+ * A JSON is added to test product rendering
+ */
+import { data } from '../data';
+
+/**
+ * API URL
+ */
+const BASE_URL = "https://chupaprecios.com.mx/rest/V1";
+const TEST_ENVIRONMENT = useState(true)
+
+/**
+ * Product Card contains the methods to be used
+ */
 export const ProductCard = ({
 	allProducts,
 	setAllProducts,
@@ -10,10 +25,24 @@ export const ProductCard = ({
 	total,
 	setTotal,
 }) => {
+	/**
+	 * The asin to be used is declared
+	 */
 	const [asin, setAsin] = useState('B07ZQS94VJ');
+
+	/**
+	 * The store to be used is declared
+	 */
 	const [selectedStore, setSelectedStore] = useState('amazon');
+
+	/**
+	 * The product data that comes from the API is saved
+	 */
 	const [apiProducts, setApiProducts] = useState([]);
 
+	/**
+	 * The token that will be used in the product API is obtained
+	 */
 	const getToken = async () => {
 		const response = await fetch(`${BASE_URL}/integration/admin/token`, {
 		  method: 'POST', 
@@ -24,6 +53,9 @@ export const ProductCard = ({
 		getProducts(data);
 	};
 
+	/**
+	 * The products API is rendered
+	 **/
 	const getProducts = async (token) => {
 		const response = await fetch(`${BASE_URL}/chupaprecios/productdetail/?asin=${asin}&selectedStore=${selectedStore}`, {
 		  method: "GET",
@@ -36,10 +68,17 @@ export const ProductCard = ({
 		setApiProducts(data);
 	};
 
-	//useEffect(() => {
-		getToken();
-	//}, []);
+	/**
+	 * The API call is made through the token method
+	 * It's validated if the service goes to the API or JSON for component tests
+	 */
+	if(TEST_ENVIRONMENT) {setApiProducts(data)} else {getToken()}
 
+	/**
+	 * Products are added to the shopping cart
+	 * @param {*} product 
+	 * @returns 
+	 */
 	const onAddProduct = (product) => {
 		product.quantity = 1;
 
@@ -61,6 +100,9 @@ export const ProductCard = ({
 		setAllProducts([...allProducts, product]);
 	};
 
+	/**
+	 * Data is rendered in the ProductCard component
+	 */
 	return (
 		<div className='container-items'>
 			{apiProducts.map(product => (

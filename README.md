@@ -1,4 +1,5 @@
 # carritodecompras
+
 Carrito de Compras
 
 Paso 1: Creación de un Componente
@@ -7,21 +8,29 @@ src/components/Header.js
 
 Paso 2: Gestión de Estado y Eventos
 src/components/ProductCard.jsx
+
 - onAddProduct
 
-src/components/Header.js
+src/components/Header.jsx
+
 - onDeleteProduct
 - onCleanCart
 - allProducts
 
 Paso 3: Integración de API
-Clase: src/components/ProductCard.jsx
+src/components/ProductCard.jsx
+
 - getToken
 - getProducts
 
 Paso 4: Optimización y Pruebas Unitarias
-Clase: src/data.js
-
+src/data.js
 
 Url del sitio
 carritodecompras-seven.vercel.app
+
+Comando para compilar la aplicación en local
+npm run dev
+
+Setear la bandera para llamar a la API
+TEST_ENVIRONMENT = useState(false)

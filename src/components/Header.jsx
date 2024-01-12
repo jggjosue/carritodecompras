@@ -1,5 +1,11 @@
+/**
+ * Library import
+ */
 import { useState } from 'react';
 
+/**
+ * API URL
+ */
 export const Header = ({
 	allProducts,
 	setAllProducts,
@@ -8,8 +14,15 @@ export const Header = ({
 	setCountProducts,
 	setTotal,
 }) => {
+	/**
+	 * A flag is set to open and close the shopping cart
+	 */
 	const [active, setActive] = useState(false);
 
+	/**
+	 * Method that eliminates products
+	 * @param {*} product 
+	 */
 	const onDeleteProduct = product => {
 		const results = allProducts.filter(
 			item => item.data.productId !== product.data.productId
@@ -20,12 +33,18 @@ export const Header = ({
 		setAllProducts(results);
 	};
 
+	/**
+	 * Method to clean the shopping cart
+	 */
 	const onCleanCart = () => {
 		setAllProducts([]);
 		setTotal(0);
 		setCountProducts(0);
 	};
 
+	/**
+	 * Rendering of the products in the shopping cart
+	 */
 	return (
 		<header>
 			<h1>Chupa Precios</h1>

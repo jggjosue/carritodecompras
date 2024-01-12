@@ -1,3 +1,6 @@
+/**
+ * Five products added for testing
+ */
 export const data = [
 	{
 		"status": "ok",
@@ -689,5 +692,4 @@ export const data = [
 			}
 		}
 	},
-
 ];
