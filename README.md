@@ -31,6 +31,3 @@ carritodecompras-seven.vercel.app
 
 Comando para compilar la aplicación en local
 npm run dev
-
-Setear la bandera para llamar a la API
-TEST_ENVIRONMENT = useState(false)

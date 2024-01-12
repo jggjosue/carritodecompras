@@ -1,7 +1,7 @@
 /**
  * Five products added for testing
  */
-export const data = [
+export const dataTest = [
 	{
 		"status": "ok",
 		"data": {

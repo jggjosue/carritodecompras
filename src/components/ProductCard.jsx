@@ -6,13 +6,12 @@ import { useState } from 'react';
 /**
  * A JSON is added to test product rendering
  */
-import { data } from '../data';
+import { dataTest } from '../data';
 
 /**
  * API URL
  */
 const BASE_URL = "https://chupaprecios.com.mx/rest/V1";
-const TEST_ENVIRONMENT = useState(true)
 
 /**
  * Product Card contains the methods to be used
@@ -52,6 +51,7 @@ export const ProductCard = ({
 		const data = await response.json();
 		getProducts(data);
 	};
+	getToken();
 
 	/**
 	 * The products API is rendered
@@ -69,19 +69,12 @@ export const ProductCard = ({
 	};
 
 	/**
-	 * The API call is made through the token method
-	 * It's validated if the service goes to the API or JSON for component tests
-	 */
-	if(TEST_ENVIRONMENT) {setApiProducts(data)} else {getToken()}
-
-	/**
 	 * Products are added to the shopping cart
 	 * @param {*} product 
 	 * @returns 
 	 */
 	const onAddProduct = (product) => {
 		product.quantity = 1;
-
 
 		if (allProducts.find(item => item.data.productId === product.data.productId)) {
 			const products = allProducts.map(item => 
