@@ -27,7 +27,7 @@ Paso 4: Optimización y Pruebas Unitarias
 src/data.js
 
 Url del sitio
-carritodecompras-seven.vercel.app
+https://carritodecompras-theta.vercel.app/
 
 Comando para compilar la aplicación en local
 npm run dev
