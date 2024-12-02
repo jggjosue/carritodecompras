@@ -1,30 +1,23 @@
-# carritodecompras
+Shopping Cart
 
-Carrito de Compras
+Step 1: Creating a Component 
+src/components/ProductCard.jsx src/components/Header.js
 
-Paso 1: Creación de un Componente
-src/components/ProductCard.jsx
-src/components/Header.js
-
-Paso 2: Gestión de Estado y Eventos
+Step 2: State and Event Management 
 src/components/ProductCard.jsx
 
-- onAddProduct
-
+onAddProduct
 src/components/Header.jsx
+onDeleteProduct
+onCleanCart
+allProducts
 
-- onDeleteProduct
-- onCleanCart
-- allProducts
-
-Paso 3: Integración de API
+Step 3: API Integration 
 src/components/ProductCard.jsx
+getToken
+getProducts
 
-- getToken
-- getProducts
-
-Paso 4: Optimización y Pruebas Unitarias
+Step 4: Optimization and Unit Testing 
 src/data.js
 
-Comando para compilar la aplicación en local
-npm run dev
+Command to compile the application locally npm run dev
