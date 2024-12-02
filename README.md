@@ -26,8 +26,5 @@ src/components/ProductCard.jsx
 Paso 4: Optimización y Pruebas Unitarias
 src/data.js
 
-Url del sitio
-https://carritodecompras-theta.vercel.app/
-
 Comando para compilar la aplicación en local
 npm run dev
